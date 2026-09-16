@@ -3,7 +3,7 @@ import './App.css';
 
 /* ── Policy Sections Data ───────────────────────────────── */
 const CONTACT_EMAIL = 'ahmedhassanmessi111@gmail.com';
-const LAST_UPDATED = 'July 4, 2026';
+const LAST_UPDATED = 'September 15, 2026';
 
 const policySections = [
   {
@@ -14,13 +14,16 @@ const policySections = [
     content: (
       <>
         <p>
-          Welcome to <strong>Tripzy</strong>. Your privacy is important to us. This Privacy Policy
-          explains how Tripzy ("we," "us," or "our") collects, uses, stores, and protects your
-          information when you use our mobile application.
+          This Privacy Policy applies to <strong>Tripzo</strong>, the mobile app developed and
+          operated by <strong>AH APP STUDIOS</strong> ("we," "us," or "our").
+          The Android package identifier is <strong>com.ahmedhassan.tripzy</strong>.
+          Tripzo was previously named Tripzy; this policy covers the same app under both names.
+          It explains how we collect, use, store, and share information when you use Tripzo.
         </p>
         <p>
-          By using Tripzy, you agree to the practices described in this Privacy Policy. If you do not
-          agree with this policy, please do not use our app.
+          We ask for consent and device permissions before recording a trip. You can decline
+          location access and continue using features that do not need location. For privacy
+          questions or requests, contact AH APP STUDIOS at the email below.
         </p>
       </>
     ),
@@ -33,7 +36,7 @@ const policySections = [
     content: (
       <>
         <p>
-          We collect information to provide, maintain, and improve the Tripzy experience. The types
+          We collect information to provide, maintain, and improve the Tripzo experience. The types
           of information we may collect include:
         </p>
         <ul>
@@ -41,7 +44,9 @@ const policySections = [
           <li>Location data (GPS coordinates during active trip tracking)</li>
           <li>Trip and route data (distance, duration, speed, and travel path)</li>
           <li>Device information (device model, operating system version, unique identifiers)</li>
-          <li>Usage data (app interactions, feature usage patterns)</li>
+          <li>Vehicle details, trip scores, achievements, and leaderboard statistics</li>
+          <li>Purchase and subscription information, including transaction identifiers and entitlement status</li>
+          <li>Push notification tokens and notification preferences</li>
         </ul>
       </>
     ),
@@ -54,14 +59,18 @@ const policySections = [
     content: (
       <>
         <p>
-          Tripzy may request <strong>location permission</strong> to track your trips and routes.
-          Location data is collected only when you actively use the trip tracking features.
+          Tripzo collects <strong>precise location</strong> to record your route, distance, speed,
+          and trip statistics during a trip you start, even when the app is in the background
+          or your screen is locked. Tracking stops when you stop the trip.
         </p>
         <p>
-          Your location data is used <strong>solely for trip tracking features</strong>, including
-          recording routes, calculating distance, and displaying your travel path on the map. We do
-          not track your location in the background unless you have explicitly enabled background
-          tracking for an active trip.
+          Location samples are stored on your device and uploaded to your account through our
+          Supabase service for trip history and route display. Derived trip statistics are used
+          for scores and leaderboards. We do not use location for advertising.
+          On Android, a foreground service with an ongoing trip-tracking notification keeps
+          a user-started trip recording when you switch apps or lock your screen. The updated
+          Android app requests location while using the app; it does not request all-the-time
+          location access. We do not automatically detect or start trips.
         </p>
         <p>
           You can <strong>disable location permissions</strong> at any time from your device settings.
@@ -78,13 +87,13 @@ const policySections = [
     content: (
       <>
         <p>
-          When you create a Tripzy account, we may collect your name, email address, and other
+          When you create a Tripzo account, we may collect your name, email address, and other
           profile details you choose to provide. This information helps personalize your experience
           and enables features such as leaderboards and social interactions within the app.
         </p>
         <p>
           You may update or modify your profile information at any time through the app settings. To
-          request full account or data deletion, please contact us at{' '}
+          delete your account and associated data, use Settings → Delete Account in Tripzo, or contact us at{' '}
           <a href={`mailto:${CONTACT_EMAIL}`} className="contact-inline">{CONTACT_EMAIL}</a>.
         </p>
       </>
@@ -98,13 +107,14 @@ const policySections = [
     content: (
       <>
         <p>
-          Tripzy may request access to your <strong>camera and media library</strong>. These
-          permissions are used <strong>only when you choose to upload or change your profile
-          picture</strong>.
+          Tripzo requests <strong>camera access</strong> only when you choose to take a profile
+          picture. You can also select a photo with the system photo picker; Tripzo receives
+          the photo you select rather than access to your entire photo library.
         </p>
         <p>
-          We do not access your camera or media library for any other purpose. Photos selected for
-          your profile are stored securely and are not shared with third parties without your consent.
+          Selected profile photos are uploaded to our storage provider, Supabase. Your profile
+          photo and display name can be visible to other users in profiles and leaderboards.
+          You can choose to skip adding a profile photo.
         </p>
         <p>
           You can <strong>revoke camera and media permissions</strong> at any time through your device
@@ -121,7 +131,7 @@ const policySections = [
     content: (
       <>
         <p>
-          Tripzy may request <strong>notification permission</strong> to send you relevant updates.
+          Tripzo may request <strong>notification permission</strong> to send you relevant updates.
           Notifications may include:
         </p>
         <ul>
@@ -146,7 +156,7 @@ const policySections = [
       <>
         <p>We use the information we collect to:</p>
         <ul>
-          <li>Provide, operate, and maintain the Tripzy app</li>
+          <li>Provide, operate, and maintain the Tripzo app</li>
           <li>Track and record trips, routes, and travel statistics</li>
           <li>Personalize your experience and display relevant content</li>
           <li>Send notifications, reminders, and activity updates</li>
@@ -165,8 +175,9 @@ const policySections = [
     content: (
       <>
         <p>
-          We implement industry-standard security measures to protect your personal information,
-          including encryption, secure servers, and access controls.
+          Account, profile, and trip data are hosted using Supabase. Active and offline trips
+          are also stored on your device until they can be synchronized. Network requests
+          use HTTPS and backend access controls restrict access to account data.
         </p>
         <p>
           While we strive to protect your data, no method of electronic transmission or storage is
@@ -189,7 +200,8 @@ const policySections = [
         </p>
         <ul>
           <li>With your explicit consent</li>
-          <li>With trusted service providers who assist in operating the app (under strict confidentiality agreements)</li>
+          <li>With service providers needed to operate the app, as described below</li>
+          <li>With other users: your display name, profile photo, country, and ranked trip statistics may appear in profiles and leaderboards</li>
           <li>To comply with legal obligations, enforce our policies, or protect rights and safety</li>
           <li>In connection with a merger, acquisition, or sale of assets (with prior notice)</li>
         </ul>
@@ -208,10 +220,11 @@ const policySections = [
           in this Privacy Policy, or as required by law.
         </p>
         <p>
-          If you wish to delete your account or request removal of your data, please contact us at{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="contact-inline">{CONTACT_EMAIL}</a>. We
-          will process your request within a reasonable timeframe and in accordance with applicable
-          laws.
+          To delete your account and associated profile, vehicle, trip, and route data, use Settings → Delete Account, or email an account deletion request to{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="contact-inline">{CONTACT_EMAIL}</a>. Include the email address associated with your Tripzo account so we can verify the request.
+          Records required for legal, fraud prevention, or payment obligations may be retained
+          for those purposes. Account deletion does not cancel an active store subscription;
+          manage subscriptions in Google Play or the App Store.
         </p>
       </>
     ),
@@ -247,7 +260,7 @@ const policySections = [
     content: (
       <>
         <p>
-          Tripzy is not intended for children under the age of 13. We do not knowingly collect
+          Tripzo is not intended for children under the age of 13. We do not knowingly collect
           personal information from children under 13 years of age.
         </p>
         <p>
@@ -267,14 +280,18 @@ const policySections = [
     content: (
       <>
         <p>
-          Tripzy may integrate with third-party services such as mapping providers, analytics
-          platforms, and authentication services. These third-party services have their own privacy
-          policies, and we encourage you to review them.
+          Tripzo uses Supabase for authentication, database, and photo storage; Google Sign-In
+          and Sign in with Apple for optional account login; Google Maps or Apple Maps for maps;
+          Firebase Cloud Messaging for push notifications; and RevenueCat with Google Play
+          or the App Store for purchases and subscription validation. These services process
+          information needed to provide their functions, such as account identifiers, map
+          requests, device or notification identifiers, and purchase records. We do not receive
+          your full payment-card details.
         </p>
         <p>
-          We are not responsible for the privacy practices of third-party services. We select our
-          partners carefully and work only with services that maintain reasonable data protection
-          standards.
+          Their privacy policies are available from Supabase, Google, Apple, and RevenueCat.
+          Service providers may process data in countries other than your country of residence.
+          Contact AH APP STUDIOS with questions about how these services are used in Tripzo.
         </p>
       </>
     ),
@@ -292,8 +309,7 @@ const policySections = [
           date at the top of this page.
         </p>
         <p>
-          We encourage you to review this Privacy Policy periodically. Continued use of Tripzy after
-          changes have been posted constitutes your acceptance of the updated policy.
+          We encourage you to review this Privacy Policy periodically. If a change requires additional consent, we will ask before using your data for the new purpose.
         </p>
       </>
     ),
@@ -315,7 +331,7 @@ function Header() {
       <div className="header-inner">
         <div className="logo">
           <div className="logo-icon" aria-hidden="true">T</div>
-          <span className="logo-text">Tripzy</span>
+          <span className="logo-text">Tripzo</span>
         </div>
         <span className="header-badge">Privacy Policy</span>
       </div>
@@ -333,11 +349,11 @@ function Hero() {
           Official Document
         </div>
         <h1>
-          <span className="gradient-text">Tripzy</span> Privacy Policy
+          <span className="gradient-text">Tripzo</span> Privacy Policy
         </h1>
         <p className="hero-subtitle">
-          Tripzy helps you track trips, routes, distance, and travel activity. We are committed to
-          protecting your privacy and being transparent about how we handle your data.
+          Tripzo is developed and operated by AH APP STUDIOS.
+          Android app: com.ahmedhassan.tripzy. This policy explains how Tripzo handles your data.
         </p>
         <div className="hero-meta">
           <div className="hero-meta-item">
@@ -396,7 +412,7 @@ function Footer() {
   return (
     <footer className="footer" id="footer">
       <div className="footer-inner">
-        <p className="footer-text">© 2026 Tripzy. All rights reserved.</p>
+        <p className="footer-text">© 2026 AH APP STUDIOS. Tripzo. All rights reserved.</p>
         <div className="footer-links">
           <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
         </div>
