@@ -3,7 +3,7 @@ import './App.css';
 
 /* ── Policy Sections Data ───────────────────────────────── */
 const CONTACT_EMAIL = 'ahmedhassanmessi111@gmail.com';
-const LAST_UPDATED = 'September 15, 2026';
+const LAST_UPDATED = 'September 27, 2026';
 
 const policySections = [
   {
@@ -46,6 +46,7 @@ const policySections = [
           <li>Device information (device model, operating system version, unique identifiers)</li>
           <li>Vehicle details, trip scores, achievements, and leaderboard statistics</li>
           <li>Purchase and subscription information, including transaction identifiers and entitlement status</li>
+          <li>Limited app interaction and conversion-event data, such as completed registration, vehicle category, trip lifecycle milestones, Pro screen views, and confirmed subscription purchases</li>
           <li>Push notification tokens and notification preferences</li>
         </ul>
       </>
@@ -161,6 +162,7 @@ const policySections = [
           <li>Personalize your experience and display relevant content</li>
           <li>Send notifications, reminders, and activity updates</li>
           <li>Improve app performance, features, and user experience</li>
+          <li>Measure advertising campaign performance and optimize campaigns using limited, non-location conversion events</li>
           <li>Ensure the security and integrity of the app</li>
           <li>Respond to your inquiries and support requests</li>
         </ul>
@@ -201,6 +203,7 @@ const policySections = [
         <ul>
           <li>With your explicit consent</li>
           <li>With service providers needed to operate the app, as described below</li>
+          <li>With Meta Platforms for limited advertising measurement and campaign optimization, as described below</li>
           <li>With other users: your display name, profile photo, country, and ranked trip statistics may appear in profiles and leaderboards</li>
           <li>To comply with legal obligations, enforce our policies, or protect rights and safety</li>
           <li>In connection with a merger, acquisition, or sale of assets (with prior notice)</li>
@@ -283,13 +286,25 @@ const policySections = [
           Tripzo uses Supabase for authentication, database, and photo storage; Google Sign-In
           and Sign in with Apple for optional account login; Google Maps or Apple Maps for maps;
           Firebase Cloud Messaging for push notifications; and RevenueCat with Google Play
-          or the App Store for purchases and subscription validation. These services process
+          or the App Store for purchases and subscription validation. Tripzo also uses Meta
+          App Events for limited advertising measurement and campaign optimization. Meta may
+          receive app-interaction and conversion events, subscription product, purchase value
+          and currency, and SDK-provided technical information. Meta advertiser-ID collection
+          is disabled, and Tripzo does not request Apple's App Tracking Transparency permission.
+          These services process
           information needed to provide their functions, such as account identifiers, map
           requests, device or notification identifiers, and purchase records. We do not receive
           your full payment-card details.
         </p>
         <p>
-          Their privacy policies are available from Supabase, Google, Apple, and RevenueCat.
+          Tripzo does not share precise GPS coordinates, routes, home or work locations, email
+          addresses, phone numbers, profile content, authentication tokens, payment credentials,
+          or raw trip records with Meta. Location remains excluded from advertising use.
+          Meta's privacy policy is available at{' '}
+          <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noreferrer">
+            facebook.com/privacy/policy
+          </a>. Privacy policies for the other services are available from Supabase, Google,
+          Apple, and RevenueCat.
           Service providers may process data in countries other than your country of residence.
           Contact AH APP STUDIOS with questions about how these services are used in Tripzo.
         </p>
